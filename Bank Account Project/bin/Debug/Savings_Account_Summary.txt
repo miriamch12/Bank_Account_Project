@@ -1,0 +1,8 @@
+8/7/2016 11:08:31 PM
+
+Client Name: Spongebob SquarePants
+Savings Account Number: 882958272
+Account Type: Savings
+Deposit Amount: +$0
+Withdraw Ammount: -$0
+Savings Current Balance: $1000000

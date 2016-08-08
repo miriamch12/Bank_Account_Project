@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Bank_Account_Project
 {
+    //CHILD CLASS
     class ReserveAccount : Account
     {
         //FIELDS
@@ -15,11 +16,12 @@ namespace Bank_Account_Project
         private double reserveDeposit = 0.00;
         private double reserveWithdraw = 0.00;
 
+        //PARAMETERS
         public ReserveAccount(double reserveDeposit, double reserveWithdraw)
         { }
 
-        //PROPERTIES
 
+        //PROPERTIES
         public int ReserveNumber
         {
             get { return this.reserveNumber; }
@@ -44,14 +46,18 @@ namespace Bank_Account_Project
         }
 
 
+
+        //CONSTRUCTORS
+
+            //RESERVE DEPOSIT
         public override void Deposit(double depositAmount)
         {
             this.reserveDeposit = depositAmount;
             reserveBalance = reserveBalance + depositAmount;
             Console.WriteLine(ReserveBalance);
-
         }
 
+        //RESERVE WITHDRAW
         public override void Withdraw(double withdrawAmount)
         {
             this.reserveDeposit = withdrawAmount;
@@ -59,12 +65,14 @@ namespace Bank_Account_Project
             Console.WriteLine(ReserveBalance);
         }
 
+        //RESERVE BALANCE
         public override void Balance()
         {
             Console.Clear();
             Console.WriteLine(ReserveBalance);
         }
 
+        //WRITES RESERVE ACCOUNT SUMMARY TO FILE
         public override void AccountSummary()
         {
             StreamWriter writer = new StreamWriter("Reserve_Account_Summary.txt");

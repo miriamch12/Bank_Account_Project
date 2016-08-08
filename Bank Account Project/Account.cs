@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Bank_Account_Project
 {
+    //BASE CLASS
    public abstract class Account
     {
         //FIELDS
@@ -58,6 +59,8 @@ namespace Bank_Account_Project
         public abstract void Deposit(double depositAmount);
         public abstract void Balance();
         public abstract void AccountSummary();
+
+        //MAIN MENU
         public void MainMenu()
         {
             Console.WriteLine("MAIN MENU");
@@ -73,6 +76,7 @@ namespace Bank_Account_Project
             }
         }
 
+        //ACCOUNT BALANCE
         public void ViewAccount()
         {
             List<string> balance = new List<string>();
@@ -84,6 +88,8 @@ namespace Bank_Account_Project
                 Console.WriteLine(s);
             }
         }
+
+        //DEPOSIT FUNDS
         public void DepositFunds()
         {
             List<string> deposit = new List<string>();
@@ -96,7 +102,8 @@ namespace Bank_Account_Project
             }
 
         }
-
+        
+        //WITHDRAW FUNDS
         public void WithdrawFunds()
         {
             List<string> withdraw = new List<string>();
@@ -109,13 +116,13 @@ namespace Bank_Account_Project
             }
         }
         
+        //CLIENT INFORMATION
         public void clientInformation()
         {
             Console.WriteLine("NAME: SPONGEBOB SQUAREPANTS");
             Console.WriteLine("ADDRESS: 124 CONCH ST, BIKINI BOTTOM");
             Console.WriteLine("SEX: M");
-            Console.WriteLine("DOB: 07-14-86");
-            
+            Console.WriteLine("DOB: 07-14-86");           
         }
         
       

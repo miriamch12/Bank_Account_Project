@@ -1,8 +1,8 @@
-8/7/2016 11:08:31 PM
+8/8/2016 12:07:01 AM
 
 Client Name: Spongebob SquarePants
 Checking Account Number: 243958209
 Account Type: Checking
-Deposit Amount: +$200
+Deposit Amount: +$0
 Withdraw Ammount: -$0
-Checking Current Balance: $5000200
+Checking Current Balance: $5000000

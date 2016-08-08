@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Bank_Account_Project
 {
+    //CHILD CLASS
     class CheckingAccount : Account
     {
         
@@ -16,12 +17,9 @@ namespace Bank_Account_Project
         private double checkingDeposit = 0.00;
         private double checkingWithdraw = 0.00;
 
+        //PARAMETERS
         public CheckingAccount(double checkingDeposit, double checkingWithdraw)
         { }
-
-       // public DateTime TransactionDate { get; set; }
-
-
 
 
         //PROPERTIES
@@ -52,16 +50,16 @@ namespace Bank_Account_Project
 
         //CONSTRUCTORS
 
-
+        //CHECKING DEPOSIT
         public override void Deposit(double depositAmount)
         {
             Console.Clear();
             this.checkingDeposit = checkingDeposit + depositAmount;
             checkingBalance = checkingBalance + depositAmount;
             Console.WriteLine(CheckingBalance);
-
         }
-
+        
+        //CHECKING WITHDRAW
         public override void Withdraw(double withdrawAmount)
         {
             Console.Clear();
@@ -70,12 +68,14 @@ namespace Bank_Account_Project
             Console.WriteLine(CheckingBalance);
         }
 
+        //CHECKING BALANCE
         public override void Balance()
     {
             Console.Clear();
         Console.WriteLine(CheckingBalance);
     }
 
+        //WRITES CHECKING ACCOUNT SUMMARY TO FILE
         public override void AccountSummary()
         {
             StreamWriter writer = new StreamWriter("Checking_Account_Summary.txt");
@@ -90,25 +90,10 @@ namespace Bank_Account_Project
                 summary.Append("\r\nWithdraw Ammount: -$" + checkingWithdraw);
                 summary.Append("\r\nChecking Current Balance: $" + checkingBalance);
 
-
-                DateTime now = DateTime.Now;
-
-                
+                DateTime now = DateTime.Now;               
                 writer.WriteLine(now);
-
-                writer.WriteLine(summary);
-                
+                writer.WriteLine(summary);               
             }
-
         }
-        //public void CloseAccount()
-        //{
-        //    StreamWriter writer = new StreamWriter("Checking_Account_Summary.txt",true);
-        //    writer.Close();
-
-        //}
-
-
-
     }
 }

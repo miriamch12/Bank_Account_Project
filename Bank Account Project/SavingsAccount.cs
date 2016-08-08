@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Bank_Account_Project
 {
+    //CHILD CLASS
     class SavingsAccount : Account
     {
         //FIELDS
@@ -15,6 +16,7 @@ namespace Bank_Account_Project
         private double savingsDeposit = 0.00;
         private double savingsWithdraw = 0.00;
 
+        //PARAMETERS
         public SavingsAccount(double savingsDeposit, double savingsWithdraw)
         { }
 
@@ -44,15 +46,16 @@ namespace Bank_Account_Project
             set { this.SavingsWithdraw = value; }
         }
 
+        //SAVINGS DEPOSIT
         public override void Deposit(double depositAmount)
         {
             Console.Clear();
             this.savingsDeposit = depositAmount;
             savingsBalance = savingsBalance + depositAmount;
             Console.WriteLine(SavingsBalance);
-
         }
 
+        //SAVINGS WITHDRAW
         public override void Withdraw(double withdrawAmount)
         {
             Console.Clear();
@@ -61,13 +64,14 @@ namespace Bank_Account_Project
             Console.WriteLine(SavingsBalance);
         }
 
+        //SAVINGS BALANCE
         public override void Balance()
         {
             Console.Clear();
             Console.WriteLine(SavingsBalance);
         }
 
-
+        //WRITES SAVINGS ACCOUNT SUMMARY TO FILE
         public override void AccountSummary()
         {
             StreamWriter writer = new StreamWriter("Savings_Account_Summary.txt");
@@ -82,9 +86,7 @@ namespace Bank_Account_Project
                 summary.Append("\r\nSavings Current Balance: $" + savingsBalance);
                 DateTime now = DateTime.Now;
 
-
                 writer.WriteLine(now);
-
                 writer.WriteLine(summary);
 
             }
